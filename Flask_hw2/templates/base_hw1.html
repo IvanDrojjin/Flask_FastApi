@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <script src="static/js/bootstrap.js"></script>
+    <script src="../static/js/bootstrap.js"></script>
+    <title>
+        {% block title %} Мой магазин {% endblock %}
+    </title>
+</head>
+
+<body>
+    <header>
+        {% block header %}
+        <p style="font-style:oblique">
+            <font size="7" color="#917a79" face="Times New Roman">For Workers store</font>
+        </p>
+        {% endblock %}
+    </header>
+	
+    <div class="container-fluid">
+        <ul class="nav nav-pills justify-content-end align-items-end">
+            <li class="nav-item"><a href="/" class="nav-link">Главная</a></li>
+            <li class="nav-item"><a href="/clothes/" class="nav-link">Одежда</a></li>
+            <li class="nav-item"><a href="/shoes/" class="nav-link">Обувь</a></li>
+            <li class="nav-item"><a href="/accessories/" class="nav-link">Аксессуары</a></li>
+        </ul>
+		
+		<content>
+        <!--Base_hw1.html  Content-->
+        {% block content %} <br>
+			{% for i in content %}
+				<font size="4" color="#3e7872" face="Times New Roman">
+				<div>
+					Название: {{ i.name }} <br>
+					Размер: {{ i.size }} <br>
+					Количество: {{ i.amount }}<br>
+					<br>
+				</div>
+				</font>
+			{% endfor %} 
+		{% endblock %} 
+		</content>
+		
+		<main>
+            <!--Base_hw1.html  Main-->
+            {% block main %}
+			<br>
+			{% for i in content %}
+				<font size="4" color="#3e7872" face="Times New Roman">
+				<div>
+					Название: {{ i.name }} <br>
+					Размер: {{ i.size }} <br>
+					Количество: {{ i.amount }}<br>
+					<br>
+				</div>
+				</font>
+			{% endfor %}
+			{% endblock %}
+		</main>
+
+        <div class="row fixed-bottom modal-footer">
+            <hr>
+            <p>Все права защищены &copy;</p>
+        </div>
+    </div>
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
